@@ -16,7 +16,7 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 
 stream = client.chat.completions.create(
     model="gpt-3.5-turbo-0125",
-    messages=[{"role": "system", "content": "The user gives you countries and your task i to answer with the capital city"}],
+    messages=[{"role": "system", "content": "The user gives you countries and your task is to answer with the capital city"}],
     stream=True,
 )
 for chunk in stream:
