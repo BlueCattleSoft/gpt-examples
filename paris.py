@@ -1,7 +1,16 @@
 import os
+import sys
 from openai import OpenAI
 
-OPENAI_API_KEY="..."
+try:
+    with open("APIKEY", 'r') as file:
+        OPENAI_API_KEY = file.read()
+except FileNotFoundError:
+    print(f"File '{file_path}' not found.")
+    sys.exit(0)
+except Exception as e:
+    print("An error occurred:", e)
+    sys.exit(0)
 
 client = OpenAI(api_key=OPENAI_API_KEY)
 
